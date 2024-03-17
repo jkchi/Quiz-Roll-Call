@@ -4,9 +4,11 @@
 
 <h2> Here is the login page for the quiz tool<h2>
 
-{% if form.errors %}
+
+<!-- could be edited to later use -->
+<!-- {% if form.errors %}
   <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% endif %} -->
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
