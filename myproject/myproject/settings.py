@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     "home.apps.HomeConfig",
     "dashboard.apps.DashboardConfig",
+    "question.apps.QuestionConfig",
+    "quiz.apps.QuizConfig",
+    "result.apps.ResultConfig",
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -143,7 +146,7 @@ STATIC_URL = '/static/'
 # BASE_DIR / 'quizes' / 'static' define the other file should be thinking about
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
-    BASE_DIR / 'quizes' / 'static',
+    BASE_DIR / 'quiz' / 'static',
 ]
 
 
