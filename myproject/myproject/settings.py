@@ -133,3 +133,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # define logout redirect
 LOGOUT_REDIRECT_URL = '/'
 
+
+# STATIC_URL used to define the url for static files
+# The static path used to store the asset file(image)
+# eg <img src="{% static 'images/logo.png' %}" alt="My logo">
+STATIC_URL = '/static/'
+
+# STATICFILES_DIRS define the universal static file path under the root dir
+# BASE_DIR / 'quizes' / 'static' define the other file should be thinking about
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'quizes' / 'static',
+]
+
+
