@@ -49,6 +49,7 @@ class Answer(models.Model):
         null=True
     )
 
+    # a bool field indicate if the choice is correct
     correct = models.BooleanField(default=False)
  
     question = models.ForeignKey(
