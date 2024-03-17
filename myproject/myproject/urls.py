@@ -24,5 +24,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('', HomeView.as_view(), name='home'),
+    # direct main page to the HomeView 
+    path('', HomeView.as_view(), name='home'), 
+    path('dashboard', include('dashboard.urls')),
 ]

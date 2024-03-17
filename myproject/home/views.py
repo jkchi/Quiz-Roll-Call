@@ -11,4 +11,5 @@ class HomeView(View):
     def get(self,request):
         if not request.user.is_authenticated:
             return redirect(reverse('login'))  
-        return render(request, 'home/main.html')
+        # using namespace to point to the dashboard:dashboard
+        return redirect(reverse('dashboard:main'))
