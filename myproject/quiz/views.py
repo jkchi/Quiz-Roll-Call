@@ -27,7 +27,7 @@ class QuizListView(ListView):
 # using pk to locate the specific quiz
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
-    return render(request,'quiz/quiz.html',{'obj': quiz})
+    return render(request,'quiz/quiz.html',{'object': quiz})
     
 
 # functin as view

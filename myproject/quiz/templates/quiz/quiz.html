@@ -17,11 +17,30 @@
 </div>
 
 <form class="mt-3" id="quiz-form">
+    
     {% csrf_token %}
     <!-- define the location where the main quiz will go -->
     <div id="quiz-box">
     </div>
-    <div class="text-center py-3">
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-auto">
+                <!-- <button type="submit" class="mt-4 btn btn-primary btn-lg">Send</button> -->
+                <button type="submit" class="btn btn-primary ">Send</button>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'quiz:main_view' %}" class="btn btn-danger" id="back-button">
+                    Go back
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</form>
+    <!-- <div class="text-center py-3">
         <button type="submit" class="mt-4 btn btn-primary btn-lg">Send</button>
     </div>
 </form>
@@ -30,6 +49,6 @@
     <a href="{% url 'quiz:main_view' %}" class="btn btn-danger" id="">
         Go back
     </a>
-</div>
+</div> -->
 
 {% endblock %}
