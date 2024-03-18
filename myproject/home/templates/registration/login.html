@@ -17,6 +17,7 @@
 
 <!-- next param point to the next page   -->
 <!-- no space should be in the value tag -->
-<input type="hidden" name="next" value="{% url 'dashboard:main' %}" />
+<!-- pattern url <a name in url.py> -->
+<input type="hidden" name="next" value="{% url 'quiz:main_view' %}" />
 </form>
 {% endblock %}

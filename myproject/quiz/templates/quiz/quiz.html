@@ -20,6 +20,7 @@
     
     {% csrf_token %}
     <!-- define the location where the main quiz will go -->
+
     <div id="quiz-box">
     </div>
 
@@ -40,15 +41,19 @@
     </div>
 
 </form>
-    <!-- <div class="text-center py-3">
-        <button type="submit" class="mt-4 btn btn-primary btn-lg">Send</button>
-    </div>
-</form>
 
-<div class="py-3">
-    <a href="{% url 'quiz:main_view' %}" class="btn btn-danger" id="">
+<div id="score-box">
+</div>
+
+
+<div id="result-box">
+
+    <a href="{% url 'quiz:main_view' %}" class="btn btn-danger" id="quiz-back-button" hidden>
         Go back
     </a>
-</div> -->
+    
+</div>
+
+
 
 {% endblock %}

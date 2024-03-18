@@ -12,4 +12,4 @@ class HomeView(View):
         if not request.user.is_authenticated:
             return redirect(reverse('login'))  
         # using namespace to point to the dashboard:dashboard
-        return redirect(reverse('dashboard:main'))
+        return redirect(reverse('quiz:main_view'))

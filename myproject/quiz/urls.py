@@ -10,4 +10,5 @@ urlpatterns = [
     # notice register a function not a function call
     path('<pk>', views.quiz_view, name='quiz_view'),
     path('<pk>/data', views.quiz_detail_data_view, name='quiz_data_view'),
+    path('<pk>/save', views.save_quiz_view, name='quiz_save_view'),
 ]
