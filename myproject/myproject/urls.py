@@ -27,4 +27,5 @@ urlpatterns = [
     # direct main page to the HomeView 
     path('', HomeView.as_view(), name='home'), 
     path('dashboard', include('dashboard.urls')),
+    path('quiz/', include('quiz.urls')),
 ]

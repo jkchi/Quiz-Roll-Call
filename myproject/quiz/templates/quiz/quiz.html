@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+<!-- static has to be loaded -->
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'quiz/quiz.js' %}" defer></script>
+{% endblock scripts %}
+
+
+{% block content %}
+
+
+<div class="container text-center py-4">
+    <h1 class="">Quiz: {{object.name}}</h1>
+</div>
+
+<form class="mt-3" id="quiz-form">
+    {% csrf_token %}
+    <!-- define the location where the main quiz will go -->
+    <div id="quiz-box">
+    </div>
+    <div class="text-center py-3">
+        <button type="submit" class="mt-4 btn btn-primary btn-lg">Send</button>
+    </div>
+</form>
+
+<div class="py-3">
+    <a href="{% url 'quiz:main_view' %}" class="btn btn-danger" id="">
+        Go back
+    </a>
+</div>
+
+{% endblock %}

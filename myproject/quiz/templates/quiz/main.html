@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+
+{% block scripts %}
+
+<script src="{% static 'quiz/main.js' %}" defer></script>
+
+{% endblock scripts %}
+
+{% block content %}
+  
+<!-- define the modal that will be target by quiz start -->
+<!-- the value and the text in the modal will be changed by js after click -->
+<div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Start Quiz</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <!-- using the id modal-body-confirm to locate the body and apply text to it -->
+    <div class="modal-body" id="modal-body-confirm">
+    </div>
+    <div class="modal-footer">
+        <!-- here is the botton of the modal -->
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success" id="startButton">Start</button>
+    </div>
+    </div>
+</div>
+</div>
+
+<h2> Quiz List View</h2>
+    <hr>
+
+    <!-- in view the collect of quiz is obj {'obj':quiz} -->
+    <!-- data-bs-toggle="modal" bind the element to modal
+    data-bs-target define the target of the specific modal -->
+    {% for object in quiz_list %}
+    <div class="m-3">
+    
+        <button 
+            type="button" 
+            class="btn btn-link modal-button" 
+            data-pk="{{object.pk}}" 
+            data-date="{{object.date}}"
+            data-name="{{object.name}}" 
+            data-description="{{object.description}}" 
+            data-questions="{{object.number_of_questions}}" 
+            data-time="{{object.time}}" 
+            data-bs-toggle="modal"
+            data-bs-target="#quizStartModal">
+            {{object.name}}
+        </button>
+    </div>
+    {% endfor %}
+
+{% endblock %}
